@@ -80,7 +80,7 @@ def run_mergesort2_tests(file_path):
         print(f"{'-'*20}\n")
     
     print(f"✅ {passed}/{total} mergesort2 테스트 케이스 통과")
-        return passed, total
+    return passed, total
 
 
 def run_test_cases(file_path="2.4.mergesort2.py"):
