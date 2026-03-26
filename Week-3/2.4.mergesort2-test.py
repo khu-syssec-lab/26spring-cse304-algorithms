@@ -55,6 +55,7 @@ def run_merge2_tests(file_path):
         print(f"{'-'*20}\n")
     
     print(f"✅ {passed}/{total} merge2 테스트 케이스 통과")
+    return passed, total
 
 def run_mergesort2_tests(file_path):
     module_name = "mergesort2"
@@ -84,8 +85,9 @@ def run_mergesort2_tests(file_path):
 
 
 def run_test_cases(file_path="2.4.mergesort2.py"):
-    run_merge2_tests(file_path)
-    run_mergesort2_tests(file_path)
+    passed, total = run_merge2_tests(file_path)
+    passed2, total2 = run_mergesort2_tests(file_path)
+    return int((passed+passed2)/2), int((total+total2)/2)
 
 if __name__ == "__main__":
     run_test_cases()

@@ -59,6 +59,7 @@ def run_merge_tests(file_path):
         print(f"{'-'*20}\n")
 
     print(f"✅ {passed}/{total} merge 테스트 케이스 통과")
+    return passed, total
 
 
 def run_mergesort_tests(file_path):
@@ -94,8 +95,9 @@ def run_mergesort_tests(file_path):
 
 def run_test_cases(file_path="2.2.mergesort.py"):
     """ 테스트 실행 및 결과 검증 """
-    run_merge_tests(file_path)
-    run_mergesort_tests(file_path)
+    passed, total = run_merge_tests(file_path)
+    passed2, total2 = run_mergesort_tests(file_path)
+    return int((passed+passed2)/2), int((total+total2)/2)
 
 
 if __name__ == "__main__":
